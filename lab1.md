@@ -116,7 +116,7 @@ After completing this lab, you will be able to:
     ```shell
     echo "0" > /sys/class/gpio/gpio1018/value
     ```
-    The LED0 shoud truns off.
+    The LED0 shoud trun off.
 1. Unexport the GPIO.
     ```shell
     echo "1018" > /sys/class/gpio/unexport
