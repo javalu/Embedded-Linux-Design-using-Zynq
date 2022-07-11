@@ -96,7 +96,7 @@ After completing this lab, you will be able to
     </p>
 1. Save and exit the menu.
 
-#### Config kernel to enable GPIO drivers (Optional)
+#### Configure kernel to enable GPIO drivers (Optional)
 >Usually the GPIO is enabled in the kernel by default and this section can be skipped.
 1. Run the following command:
     ```shell
@@ -119,6 +119,22 @@ After completing this lab, you will be able to
     </p>
 1. Save and exit the menu.
 
+#### Configure rootfs to enable TCF agent
+1. Run the command:
+    ```shell
+    petalinux-config -c rootfs
+    ```
+    It will launch the rootfs confguration menu.
+1. Navigate to **Filesystem Packages > misc > tcf-agent**, and make sure **tcf-agent** is enabled.
+    <p align="center">
+    <img src ="images/lab2/10_ConfigTCF.png" width="60%" height="80%"/>
+    </p>
+    <p align = "center">
+    <i>Enable TCF agent</i>
+    </p>
+1. Save and exit the menu.
+
+
 #### Build the PetaLinux project and Generate Boot files
 1. Run the command `petalinux-build`, it will automatically build everything we need including kernel, rootfs, device tree, FSBL, and u-boot. The compilation may last for few hours depending on your network and the number of CPUs.
 1. When the compilation finished, run the following command to package the boot files:
@@ -126,7 +142,7 @@ After completing this lab, you will be able to
     petalinux-package --boot --fpga --u-boot
     ```
     It will show a success message when finished.
-1. Find the three boot files (**BOOT.BIN, boot.scr, image.ub**) and the root file system (**rootfs.tar.gz**) under **{labs}/lab2_petalinux/images/linux/**.
+1. Find the boot files (**BOOT.BIN, boot.scr, image.ub**) and the root file system (**rootfs.tar.gz**) in the folder **{labs}/lab2_petalinux/images/linux/**.
 
 ### Verify on Hardware
 1. Follow the instruction in lab1 to configure and boot the board using the image files generated in this lab.
