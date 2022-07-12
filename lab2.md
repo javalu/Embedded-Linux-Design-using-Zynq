@@ -146,11 +146,11 @@ After completing this lab, you will be able to
 
 ### Verify on Hardware
 1. Follow the instruction in lab1 to configure and boot the board using the image files generated in this lab.
-1. Check the physical address of each gpiochip to decide the ID of leds and switches
+1. Decide the GPIO ID of leds and switches by checking the physical address of each gpiochip:
     ```shell
     cat /sys/class/gpio/gpiochip<ID>/label
     ```
-    It should be the same as in the Vivado Address Editor
+    The address should be the same as in the Vivado Address Editor. **It may be different on your project**.
     <p align="center">
     <img src ="images/lab2/9_AddressEditor.png" width="80%" height="80%"/>
     </p>
