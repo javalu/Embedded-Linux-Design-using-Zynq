@@ -64,7 +64,7 @@ After completing this lab, you will be able to:
     <i>Viewing the Interrupts</i>
     </p>
 
-### Test the GPIOs using the provided application.
+### Test the GPIOs using Linux driver.
 1. Using following command to view the available GPIOs in the system
     ```shell
     ls /sys/class/gpio
